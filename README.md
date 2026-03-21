@@ -41,7 +41,7 @@ monitoring-system-ASD/
 1. **Clone the repository:**
    ```bash
    git clone <repository_url>
-   cd "sana monitoring"
+   cd "folder name"
    ```
 
 2. **Create a virtual environment (optional but recommended):**
