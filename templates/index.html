@@ -1,0 +1,283 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASD Facial Feature Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>ASD Facial Feature Analysis</h1>
+
+        <div id="setup-view">
+            <p>Please select how many photos you want to take for the analysis.</p>
+            <div class="input-group">
+                <label for="photo-count-input">Number of Photos:</label>
+                <input type="number" id="photo-count-input" value="3" min="1" max="10">
+            </div>
+            <button id="start-btn">Start Capture</button>
+        </div>
+
+        <div id="main-view" style="display:none;">
+            <p id="main-instructions"></p>
+            
+            <div class="camera-container">
+                <video id="video" width="640" height="480" autoplay playsinline></video>
+                <canvas id="canvas" style="display:none;"></canvas>
+            </div>
+            
+            <div class="button-container">
+                <button id="capture-btn">Capture Photo</button>
+                <button id="analyze-btn" class="predict-btn" disabled>Analyze Photos</button>
+            </div>
+
+            <div id="thumbnails-container" class="thumbnails-container"></div>
+            <div id="loader" class="loader" style="display:none;"></div>
+
+            <div id="results-container" class="results-container" style="display:none;">
+                <h2 id="user-info"></h2>
+                <div id="results-gallery" class="results-gallery"></div>
+            </div>
+        </div>
+        
+        <div id="error-message" class="error-message" style="display:none;"></div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> -->
+
+
+<!-- ========================================================================== -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASD Facial Feature Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <h1>ASD Facial Feature Analysis</h1>
+
+        <div id="setup-view">
+            <p>This tool uses a machine learning model to analyze facial characteristics. Please select how many photos you want to capture for the analysis.</p>
+            <div class="input-group">
+                <label for="photo-count-input">Number of Photos:</label>
+                <input type="number" id="photo-count-input" value="3" min="1" max="10">
+            </div>
+            <button id="start-btn">Start Capture Session</button>
+        </div>
+
+        <div id="main-view" style="display:none;">
+            <p id="main-instructions"></p>
+            
+            <div class="camera-container">
+                <video id="video" width="640" height="480" autoplay playsinline></video>
+                <canvas id="canvas" style="display:none;"></canvas>
+            </div>
+            
+            <div class="button-container">
+                <button id="capture-btn">Capture Photo</button>
+                <button id="analyze-btn" class="predict-btn" disabled>Analyze Photos</button>
+            </div>
+
+            <div id="thumbnails-container" class="thumbnails-container"></div>
+            <div id="loader" class="loader" style="display:none;"></div>
+
+            <div id="results-container" class="results-container" style="display:none;">
+                <h2 id="user-info"></h2>
+                <div id="results-gallery" class="results-gallery"></div>
+            </div>
+        </div>
+        
+        <div id="error-message" class="error-message" style="display:none;"></div>
+
+        <div class="disclaimer">
+            <p><strong>Important Disclaimer:</strong> This tool is an experimental project and is <strong>not a medical diagnostic tool</strong>. It should not be used for any medical or diagnostic purposes. The results are based on a probabilistic model and may be inaccurate. Please consult a qualified healthcare professional for any health concerns.</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> -->
+
+<!-- ========================================================================= -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ASD Facial Feature Analysis</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>ASD Facial Feature Analysis</h1>
+
+
+    <div id="auth-view">
+      <p>Please log in or create an account to begin.</p>
+      <div class="input-group" style="flex-wrap: wrap;">
+        <input id="auth-username" type="text" placeholder="Username" style="width: 220px; padding:10px; border:2px solid var(--border-color); border-radius:8px;">
+        <input id="auth-password" type="password" placeholder="Password" style="width: 220px; padding:10px; border:2px solid var(--border-color); border-radius:8px;">
+        <button id="login-btn">Log In</button>
+        <button id="register-btn">Register</button>
+      </div>
+      <div id="auth-error" class="error-message" style="display:none;"></div>
+    </div>
+
+    <div id="setup-view" style="display:none;">
+      <p>Choose how many photos you’d like to take (one photo per day).</p>
+      <div class="input-group">
+        <label for="photo-plan-input">Number of Photos:</label>
+        <input type="number" id="photo-plan-input" value="3" min="1" max="10">
+      </div>
+      <div class="button-container">
+        <button id="save-plan-btn">Save Plan</button>
+        <button id="restart-btn-setup" style="background:#6c757d;">Restart</button>
+        <button id="logout-btn" style="background:#dc3545;">Log Out</button>
+      </div>
+      <div id="setup-error" class="error-message" style="display:none;"></div>
+    </div>
+
+    <div id="main-view" style="display:none;">
+      <p id="main-instructions"></p>
+
+      <div class="camera-container">
+        <video id="video" width="640" height="480" autoplay playsinline></video>
+        <canvas id="canvas" style="display:none;"></canvas>
+      </div>
+
+      <div class="button-container">
+        <button id="capture-btn">Capture Today’s Photo</button>
+        <button id="restart-btn-main" style="background:#6c757d;">Restart</button>
+        <button id="logout-btn-2" style="background:#dc3545;">Log Out</button>
+      </div>
+
+      <div id="progress" style="margin-top:1rem;"></div>
+      <div id="countdown" style="margin-top:0.5rem; color: var(--secondary-text);"></div>
+
+      <div id="today-thumb" class="thumbnails-container"></div>
+      <div id="loader" class="loader" style="display:none;"></div>
+
+      <div id="final-result" class="results-container" style="display:none;">
+        <h2>Final Result</h2>
+        <p id="final-text" style="font-weight:700;"></p>
+      </div>
+      <div id="main-error" class="error-message" style="display:none;"></div>
+    </div>
+
+    <div class="disclaimer">
+      <p><strong>Important Disclaimer:</strong> This project is experimental and <strong>not a medical diagnostic tool</strong>. Do not rely on it for any medical decisions. Consult a qualified professional for health concerns.</p>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
+ -->
+
+
+<!-- =========================================================================================================== -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ASD Facial Feature Analysis</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Chart.js for trend -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>ASD Facial Feature Analysis</h1>
+
+    <!-- Auth View -->
+    <div id="auth-view">
+      <p>Please log in or create an account to begin.</p>
+      <div class="input-group" style="flex-wrap: wrap;">
+        <input id="auth-username" type="text" placeholder="Username" style="width: 220px; padding:10px; border:2px solid var(--border-color); border-radius:8px;">
+        <input id="auth-password" type="password" placeholder="Password" style="width: 220px; padding:10px; border:2px solid var(--border-color); border-radius:8px;">
+        <button id="login-btn">Log In</button>
+        <button id="register-btn">Register</button>
+      </div>
+      <div id="auth-error" class="error-message" style="display:none;"></div>
+    </div>
+
+    <!-- Setup View -->
+    <div id="setup-view" style="display:none;">
+      <p>Choose how many photos you’d like to take (one photo per interval).</p>
+      <div class="input-group">
+        <label for="photo-plan-input">Number of Photos:</label>
+        <input type="number" id="photo-plan-input" value="3" min="1" max="10">
+      </div>
+      <div class="button-container">
+        <button id="save-plan-btn">Save Plan</button>
+        <button id="restart-btn-setup" style="background:#6c757d;">Restart</button>
+        <button id="logout-btn" style="background:#dc3545;">Log Out</button>
+      </div>
+      <div id="setup-error" class="error-message" style="display:none;"></div>
+    </div>
+
+    <!-- Main View -->
+    <div id="main-view" style="display:none;">
+      <p id="main-instructions"></p>
+
+      <div class="camera-container">
+        <video id="video" width="640" height="480" autoplay playsinline></video>
+        <canvas id="canvas" style="display:none;"></canvas>
+      </div>
+
+      <div class="button-container">
+        <button id="capture-btn">Capture Today’s Photo</button>
+        <button id="restart-btn-main" style="background:#6c757d;">Restart</button>
+        <button id="logout-btn-2" style="background:#dc3545;">Log Out</button>
+      </div>
+
+      <div id="progress" style="margin-top:1rem;"></div>
+      <div id="countdown" style="margin-top:0.5rem; color: var(--secondary-text);"></div>
+
+      <div id="today-thumb" class="thumbnails-container"></div>
+      <div id="loader" class="loader" style="display:none;"></div>
+
+      <div id="final-result" class="results-container" style="display:none;">
+        <h2>Final Result</h2>
+        <p id="final-text" style="font-weight:700;"></p>
+
+        <!-- Trend Graph -->
+        <h3 style="margin-top:1rem;">ASD Probability Trend</h3>
+        <canvas id="trend-chart" style="max-width:100%; margin-top:0.5rem;"></canvas>
+
+        <!-- Final Gallery -->
+        <div id="final-gallery" class="results-gallery" style="margin-top:1rem;"></div>
+      </div>
+
+      <div id="main-error" class="error-message" style="display:none;"></div>
+    </div>
+
+    <div class="disclaimer">
+      <p><strong>Important Disclaimer:</strong> This project is experimental and <strong>not a medical diagnostic tool</strong>. Do not rely on it for any medical decisions. Consult a qualified professional for health concerns.</p>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
