@@ -83,3 +83,4 @@ uritemplate==4.2.0
 urllib3==2.4.0
 wsproto==1.2.0
 opencv-python-headless
+gunicorn
